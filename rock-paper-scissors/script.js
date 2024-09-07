@@ -1,5 +1,8 @@
 console.log("Welcome to rock-paper-scissors");
 
+let computerScore = 0;
+let playerScore = 0;
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
@@ -15,53 +18,73 @@ function getComputerChoice() {
   }
 }
 
-function getHumanChoice() {
-  let choice = prompt(
-    "Please enter your choice, rock, paper, scissors:",
-    "rock"
-  );
-  res = choice.toLowerCase();
-  return res;
-}
+function handleChoices(playerChoice, computerChoice) {
+  let descriptionText = document.querySelector(".description-text");
+  let headingText = document.querySelector(".heading-text");
 
-function playRound(humanChoice, computerChoice) {
-  if (humanChoice === computerChoice) {
-    return 0;
-  } else if (humanChoice === "rock") {
-    if (computerChoice == "scissors") return 1;
-    return -1;
-  } else if (humanChoice === "scissors") {
-    if (computerChoice == "paper") return 1;
-    return -1;
-  } else if (humanChoice === "paper") {
-    if (computerChoice == "rock") return 1;
-    return -1;
-  }
-}
-
-function playGame() {
-  let humanScore = 0,
-    computerScore = 0;
-  console.log("We will play 5 rounds");
-  for (let round = 1; round <= 5; round = round + 1) {
-    console.log(`Round ${round}`);
-    let humanChoice = getHumanChoice();
-    let computerChoice = getComputerChoice();
-    console.log(`Human - ${humanChoice} vs Computer - ${computerChoice}`);
-    let id = playRound(humanChoice, computerChoice);
-    if (id === 1) {
-      humanScore = humanScore + 1;
-    } else if (id === -1) {
-      computerScore = computerScore + 1;
+  if (playerChoice === computerChoice) {
+    headingText.textContent = "It's a draw";
+    descriptionText.textContent = `${playerChoice} ties with ${computerChoice}`;
+    return;
+  } else if (playerChoice === "rock") {
+    if (computerChoice == "scissors") {
+      headingText.textContent = "You won";
+      descriptionText.textContent = `${playerChoice} beats ${computerChoice}`;
+      playerScore++;
+      return;
     }
-  }
-  if (humanScore > computerScore) {
-    console.log("You win");
-  } else if (humanScore === computerScore) {
-    console.log("Draw");
-  } else {
-    console.log("You loose");
+    headingText.textContent = "You lost";
+    descriptionText.textContent = `${playerChoice} is beaten by ${computerChoice}`;
+    computerScore++;
+    return;
+  } else if (playerChoice === "scissors") {
+    if (computerChoice == "paper") {
+      headingText.textContent = "You won";
+      descriptionText.textContent = `${playerChoice} beats ${computerChoice}`;
+      playerScore++;
+      return;
+    }
+    headingText.textContent = "You lost";
+    descriptionText.textContent = `${playerChoice} is beaten by ${computerChoice}`;
+    computerScore++;
+    return;
+  } else if (playerChoice === "paper") {
+    if (computerChoice == "rock") {
+      headingText.textContent = "You won";
+      descriptionText.textContent = `${playerChoice} beats ${computerChoice}`;
+      playerScore++;
+      return;
+    }
+    headingText.textContent = "You lost";
+    descriptionText.textContent = `${playerChoice} is beaten by ${computerChoice}`;
+    computerScore++;
+    return;
   }
 }
 
-playGame();
+function playRound(playerChoice) {
+  let computerChoice = getComputerChoice();
+  let computer_img = document.querySelector("#computer-img");
+  let player_img = document.querySelector("#player-img");
+  computer_img.src = `./assets/${computerChoice}.png`;
+  player_img.src = `./assets/${playerChoice}.png`;
+  handleChoices(playerChoice, computerChoice);
+
+  let e_playerScore = document.querySelector("#player-score");
+  let e_computerScore = document.querySelector("#computer-score");
+  e_playerScore.textContent = `Player: ${playerScore}`;
+  e_computerScore.textContent = `Computer: ${computerScore}`;
+}
+
+const select_panel = document.querySelector(".select-panel");
+select_panel.addEventListener("mouseup", (e) => {
+  if (e.target.className === "select-panel") return;
+  console.log(e.target);
+  e.target.style.backgroundColor = "#4a4f57";
+  console.log(e.target.id);
+  playRound(e.target.id);
+});
+select_panel.addEventListener("mousedown", (e) => {
+  if (e.target.className === "select-panel") return;
+  e.target.style.backgroundColor = "#5b5f68";
+});

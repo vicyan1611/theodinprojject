@@ -4,7 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <header class="title container">ROCK PAPER SCISSORS</header>
+    <div class="select-section">
+      <div class="text">
+        <div class="heading-text">Choose your weapon</div>
+        <div class="description-text">
+          First score to 5 points wins the game
+        </div>
+      </div>
+
+      <div class="results">
+        <div class="score-card">
+          <img src="./assets/question.png" class="select-img" id="player-img" />
+          <div id="player-score" class="score">Player: 0</div>
+        </div>
+
+        <div class="score-card">
+          <img
+            src="./assets/question.png"
+            class="select-img"
+            id="computer-img"
+          />
+          <div id="computer-score" class="score">Computer: 0</div>
+        </div>
+      </div>
+
+      <div class="select-panel">
+        <input
+          class="btn"
+          id="scissors"
+          type="image"
+          src="./assets/scissors.png"
+        />
+        <input class="btn" id="rock" type="image" src="./assets/rock.png" />
+        <input class="btn" id="paper" type="image" src="./assets/paper.png" />
+      </div>
+    </div>
+  </body>
 </html>

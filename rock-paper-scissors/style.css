@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  height: 100vh;
+}
+
+.container {
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+/* TITLE */
+.title {
+  display: flex;
+  justify-content: center;
+  font-family: "Press Start 2P", system-ui;
+  color: rgb(159, 159, 51);
+  font-size: 28px;
+  background-color: #111720;
+  padding: 40px 0;
+}
+
+/* SCORE BOARD */
+.select-section {
+  background-color: #222831;
+  padding-top: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  gap: 40px;
+  height: 100%;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.select-section .heading-text {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.select-section .description-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.results {
+  display: flex;
+  gap: 100px;
+}
+
+.score-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.select-img {
+  max-width: 98px;
+}
+
+.score {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.results {
+  display: flex;
+}
+
+/* SELECT */
+.select-panel {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+}
+
+.btn {
+  background-color: #393e46;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 98px;
+}
+
+.btn:hover {
+  background-color: #4a4f57;
+}
