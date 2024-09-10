@@ -58,12 +58,16 @@ buttonGrid.addEventListener("click", (e) => {
       if (!secondStrNumber.includes(".")) secondStrNumber += ".";
     }
   } else if (e.target.id === "divide") {
+    if (mainSign !== null && secondStrNumber !== "") myEval();
     mainSign = "÷";
   } else if (e.target.id === "multiply") {
+    if (mainSign !== null && secondStrNumber !== "") myEval();
     mainSign = "×";
   } else if (e.target.id === "subtract") {
+    if (mainSign !== null && secondStrNumber !== "") myEval();
     mainSign = "-";
   } else if (e.target.id === "add") {
+    if (mainSign !== null && secondStrNumber !== "") myEval();
     mainSign = "+";
   } else if (e.target.id === "equal") myEval();
   else if (e.target.id === "clear") clearFunction();
