@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+}
+
+/* LEFT IMAGE */
+
+.img-background {
+  height: 100vh;
+  width: 40vw;
+  background-image: url("img/tree_background.jpg");
+  background-size: cover;
+  display: flex;
+  position: relative;
+}
+
+.transparent {
+  width: 100%;
+  height: 20%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    height: 80%;
+  }
+  position: absolute;
+  top: 120px;
+}
+
+/* CONTENT */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f9fafb;
+  gap: 16px;
+}
+
+.text-title {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+form {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.input-wraper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-section {
+  display: flex;
+  gap: 32px;
+}
+
+.container {
+  padding-left: 40px;
+  padding-right: 120px;
+}
+
+input {
+  width: 280px;
+  box-shadow: none;
+}
+
+input:invalid {
+  border: red 2px solid;
+  border-radius: 4px;
+}
+
+input:focus {
+  border: blue 2px solid;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #596d48;
+  color: white;
+  padding: 12px 60px;
+  border: none;
+  border-radius: 8px;
+}
+
+a {
+  text-decoration: none;
+  color: #596d48;
+}

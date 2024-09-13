@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign-up Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="img-background">
+        <div class="transparent">
+          <img src="/sign-up-form-project/img/odin-logo.png" alt="" />
+        </div>
+      </div>
+      <div class="content">
+        <div class="container text-title">
+          <p>
+            This is not a real online service! You know you need something like
+            this in your life to help you realize your deepest dreams.
+            <br />
+            Sign up <i>now</i> to get started.
+          </p>
+          <p>You <i>know</i> you want to.</p>
+        </div>
+        <form class="container" action="">
+          <h2>Let's do this!</h2>
+          <section class="form-section">
+            <p class="input-wraper">
+              <label for="first_name">FIRST NAME</label>
+              <input type="text" name="first_name" id="first_name" />
+            </p>
+            <p class="input-wraper">
+              <label for="last_name">LAST NAME</label>
+              <input type="text" name="last_name" id="last_name" />
+            </p>
+          </section>
+          <section class="form-section">
+            <p class="input-wraper">
+              <label for="email">EMAIL</label>
+              <input type="email" name="email" id="email" />
+            </p>
+            <p class="input-wraper">
+              <label for="phone">PHONE NUMBER</label>
+              <input type="tel" name="phone" id="phone" />
+            </p>
+          </section>
+          <section class="form-section">
+            <p class="input-wraper">
+              <label for="password">PASSWORD</label>
+              <input type="password" name="password" id="password" />
+            </p>
+            <p class="input-wraper">
+              <label for="confirm_password">CONFIRM PASSWORD</label>
+              <input type="password" id="confirm_password" minlength="3" />
+            </p>
+          </section>
+        </form>
+        <section class="container">
+          <button type="submit">Create Account</button>
+          <p>Already have an account? <a href="">Log in</a></p>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
