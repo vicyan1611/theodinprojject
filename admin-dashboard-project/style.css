@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr 5fr;
+}
+
+.header {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.header .top {
+  padding: 12px 32px;
+  display: flex;
+  justify-content: space-between;
+  .search {
+    display: flex;
+    img {
+      width: 20px;
+    }
+    gap: 12px;
+    .bar {
+      width: 720px;
+      border-radius: 20px;
+      background-color: rgb(226, 226, 226);
+      border: none;
+    }
+  }
+  .profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    .text {
+      font-weight: bold;
+    }
+
+    .bell {
+      width: 20px;
+    }
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+    }
+  }
+}
+
+.header .bottom {
+  padding: 12px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .welcome {
+    display: flex;
+    gap: 16px;
+    img {
+      width: 68px;
+      height: 68px;
+      border-radius: 40px;
+    }
+    .text {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+  .btns-container {
+    display: flex;
+    gap: 20px;
+    button {
+      padding: 8px 40px;
+      border: none;
+      background-color: #4aaee4;
+      border-radius: 16px;
+      color: white;
+      font-weight: bold;
+    }
+  }
+}
+
+.sidebar {
+  background-color: #1992d4;
+  grid-row: 1 / 3;
+  grid-column: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  .title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    img {
+      width: 50px;
+    }
+    .text {
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+
+  .selection-items {
+    color: white;
+    padding-left: 12px;
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      list-style: none;
+      font-weight: bold;
+    }
+  }
+}
+
+.content {
+  background-color: #e2e8f0;
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  display: grid;
+  grid-template-columns: 3fr 1.2fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 25px;
+  .heading {
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding-bottom: 16px;
+  }
+  padding: 20px;
+}
+
+.content .projects {
+  grid-row: 1 / 3;
+  grid-column: 1 / 2;
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 25px;
+    .card {
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      border-radius: 8px;
+      border-left: solid #f0b429 8px;
+      display: flex;
+      flex-direction: column;
+      .text-block {
+        padding: 20px 10px 0 30px;
+      }
+      .project-icons {
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+        gap: 16px;
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
+.anns {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  .anns-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 20px;
+    .ann {
+      padding: 10px 0px;
+      border-bottom: 1px solid rgba(128, 128, 128, 0.52);
+    }
+    .ann:last-child {
+      padding-bottom: none;
+      border-bottom: none;
+    }
+    .an-heading {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.trending {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  .trending-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 20px;
+    .card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      .text div:last-child {
+        color: gray;
+      }
+    }
+  }
+}
+
+.trending .card {
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 40px;
+  }
+}
+
+.projects .card {
+  .project-icons {
+    width: 20px;
+  }
+}
